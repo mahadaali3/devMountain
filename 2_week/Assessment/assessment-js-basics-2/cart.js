@@ -35,7 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
+console.log(summedPrice)
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -55,6 +57,10 @@ const cart = [
 
 //CODE HERE
 
+function calcFinalPrice(cartTotal, couponValue, tax){
+    cartTotal = cartTotal*(1+tax)-couponValue
+    console.log(cartTotal)
+}
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,6 +85,14 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    name: (string) We need to know the name of who ordered, i chose that data type because it includes characters
+    email: (string) We need to know the email of who ordered for notifications, i chose that data type because it includes characters
+    phone number: (string) We need to know the number of who ordered for notifications, i chose that data type because a phone number can have dashes
+    orderItems: (array) We need to know the items in our order, i chose that data type because there can be multiple items in an order
+    price: (int) We need to know the price of the order, i chose that data type because it is a number
+
+
+
 
 */
 
@@ -88,3 +102,13 @@ const cart = [
 */
 
 //CODE HERE
+
+let customer = {
+    name: "Mahad Ali",
+    email: "email@gmail.com",
+    phoneNumber: "9999999999",
+    orderItems: ["Medium cheese pizza", "2 liter orange soda"],
+    price: 18.99
+
+
+}
