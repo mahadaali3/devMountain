@@ -399,7 +399,7 @@ function isSorted(numArray){
   
 for(let i=0; i<numArray.length-1; i++){
   
-  if(numArray[i] != numArray[i+1]-1){
+  if(numArray[i+1] != numArray[i]+1){
     return false
   }
 }

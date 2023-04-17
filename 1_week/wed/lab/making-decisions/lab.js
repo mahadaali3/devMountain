@@ -173,13 +173,20 @@ let z = 5;
 // you should see: 5,4,3,2,1,4,3,2,1,3,2,1,2,1,1.
 
 //CODE HERE
-x= z-2
-while(z>0){
-  console.log(z)
+// x= z-2
+// while(z>0){
+//   console.log(z)     
+//   z--
+//  if(z===1){
+//   console.log(z)      
+//   z+=x
+//   x--
+//  }
+// }
+
+while (z > 0) {
+  for (let i = z; i > 0; i--) {
+    console.log(i)
+  }
   z--
- if(z===1){
-  console.log(z)
-  z+=x
-  x--
- }
 }
