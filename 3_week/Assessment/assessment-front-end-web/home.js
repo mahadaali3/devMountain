@@ -10,7 +10,7 @@ function handleSubmit(evt) {
 	
 	alert("Form submitted successfully");
 }
-
+	
 
 let form = document.querySelector('#contact');
 

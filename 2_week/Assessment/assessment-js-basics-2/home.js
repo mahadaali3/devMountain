@@ -134,10 +134,13 @@ const deals = [
 
 //CODE HERE
 
-let {title} = deals[0]
+// let {title} = deals[0]
+// console.log(title)
+// title = title.replace('5', '0')
+// console.log(title)
 
-title = title.replace('5', '0')
-console.log(title)
+deals[0].title = deals[0].title.replace('5','0')
+console.log(deals[0].title)
 
 /*
     The restaurant is going to continue its
@@ -154,7 +157,10 @@ console.log(title)
 
 //CODE HERE
 
-let {desc} = deals[1]
-desc = desc.replace('March', 'April')
-desc = desc.trim()
-console.log(desc)
+// let {desc} = deals[1]
+// desc = desc.replace('March', 'April')
+// desc = desc.trim()
+// console.log(desc)
+
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+console.log(deals[1].desc)

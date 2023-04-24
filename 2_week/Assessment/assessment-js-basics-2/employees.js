@@ -27,7 +27,7 @@
         this.shifts = shifts;
     }
     getSchedule(){
-        console.log(this.name, "works on", this.shifts)
+        console.log(`${this.name} works on ${this.shifts}`)
     }
  }
 
@@ -104,7 +104,7 @@ class Manager extends Employee {
     }
 
     getEmployees(){
-        console.log(this.name, "manages", this.employees)
+        console.log(`${this.name} manages ${this.employees}`)
     }
     addEmployee(emp){
         this.employees.push(emp)
