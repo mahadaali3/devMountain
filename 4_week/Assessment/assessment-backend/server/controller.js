@@ -1,3 +1,5 @@
+const db = require('../server/db.json')
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -18,6 +20,11 @@ module.exports = {
         let randomFortune = fortune[randomIndex];
       
         res.status(200).send(randomFortune);
+    },
+    getToDoList: (req, res) => {
+        let toDoList = db;
+        res.status(200).send(toDoList)
     }
+
 
 }
