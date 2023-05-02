@@ -28,7 +28,7 @@ const toDoListContainer = document.querySelector('#toDoList-container');
 const toDoListCallback = ({ data: toDoList }) => displayToDoList(toDoList)
 const errCallback = err => console.log(err)
 
-const baseURL = `http://localhost:4004/api/toDoList`
+const baseURL = `http://localhost:4000/api/toDoList`
 
 const getList = () => axios.get(baseURL).then(toDoListCallback).catch(errCallback)
 
@@ -43,10 +43,41 @@ function displayToDoList(data) {
         currentToDo.innerHTML = `
         ${data[i].title}`
         toDoListContainer.appendChild(currentToDo)
-        console.log(i)
+        console.log("container hit")
+        
     }
-    console.log(toDoListContainer)
+    console.log(data.length)
+    
    
+}
+
+function addToDo(body){
+    axios.post(baseURL,body).then((res) => {
+        toDo = res.data
+        displayToDoList(toDo)
+    })
+    .catch(errCallback)
+}
+
+function submitHandler(event) {
+    event.preventDefault()
+    
+    let toDo = document.querySelector('#toDo')
+
+    
+
+
+    //create body object for post
+    let body = {
+        title: toDo.value 
+    }
+
+    addToDo(body)
+    console.log("hit")
+
+    toDo.value = ''
+    location.reload()
+
 }
 
 axios.get("http://localhost:4000/api/toDoList")
@@ -54,3 +85,4 @@ axios.get("http://localhost:4000/api/toDoList")
     displayToDoList(res.data)
 })
 
+form.addEventListener('submit',submitHandler)

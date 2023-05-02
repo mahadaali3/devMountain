@@ -1,4 +1,5 @@
 const db = require('../server/db.json')
+let id = 4
 
 module.exports = {
 
@@ -24,6 +25,15 @@ module.exports = {
     getToDoList: (req, res) => {
         let toDoList = db;
         res.status(200).send(toDoList)
+    },
+
+    addToDoList: (req, res) => {
+        
+        let newToDo = {...req.body,id:id}
+        db.push(newToDo)
+
+        res.status(200).send(db);
+        id++;
     }
 
 

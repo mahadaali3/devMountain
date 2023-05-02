@@ -15,8 +15,9 @@ const { getFortune } = require('./controller')
 
 app.get("/api/fortune", getFortune);
 
-const { getToDoList } = require('./controller')
+const { getToDoList, addToDoList } = require('./controller')
 
 app.get("/api/toDoList", getToDoList);
+app.post("/api/toDoList", addToDoList);
 
 app.listen(4000, () => console.log("Server running on 4000"));
