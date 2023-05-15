@@ -34,6 +34,11 @@ module.exports = {
 
         res.status(200).send(db);
         id++;
+    },
+    deleteToDo: (req, res) => {
+        let index = toDo.findIndex(elem => elem.id === +req.params.id)
+        houses.splice(index, 1)
+        res.status(200).send(toDo)
     }
 
 

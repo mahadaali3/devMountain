@@ -1,5 +1,6 @@
 const complimentBtn = document.getElementById("complimentButton")
 
+
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
         .then(res => {
@@ -55,8 +56,22 @@ function addToDo(body){
     axios.post(baseURL,body).then((res) => {
         toDo = res.data
         displayToDoList(toDo)
+        console.log("Ahmeeeed")
     })
     .catch(errCallback)
+}
+const deleteBtn = document.getElementById('deleteBtn')
+const idvalue = document.getElementById('toDo-index')
+deleteBtn.addEventListener('click', deleteToDo)
+
+function deleteToDo(idvalue){
+    axios.delete(`${baseURL}/${idvalue.value}`).then((res) => {
+        toDo = res.data
+        console.log("Ayooo cuz")
+        displayToDoList(toDo)
+    })
+    .catch(errCallback)
+    console.log(idvalue.value)
 }
 
 function submitHandler(event) {
@@ -69,20 +84,26 @@ function submitHandler(event) {
 
     //create body object for post
     let body = {
-        title: toDo.value 
+        title: toDo.value
     }
 
     addToDo(body)
+    deleteToDo(idvalue.value)
     console.log("hit")
 
+
+    
+
     toDo.value = ''
-    location.reload()
+    // location.reload()
 
 }
 
 axios.get("http://localhost:4000/api/toDoList")
 .then(res =>{
     displayToDoList(res.data)
+   
+    console.log("yessssirrrrz")
 })
 
 form.addEventListener('submit',submitHandler)
