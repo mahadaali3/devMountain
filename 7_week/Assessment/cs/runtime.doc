@@ -1,0 +1,11 @@
+	    10	        100	        1000	    10000	    100000
+Insert	0.016917	0.008916	0.105958	6.970875	704.178833
+Append	0.11025	    0.007625	0.034167	0.33275	    1.760791
+
+Time is in milliseconds
+Top row is array sizes
+
+
+The append function scales better. The difference between insert and append is huge and will only continue 
+to get bigger as we scale up. I can tell because they start off with relatively the same run time and as 
+they got bigger append scaled better. For example with an array the size of 100000 it took append only 1.76 ms.
