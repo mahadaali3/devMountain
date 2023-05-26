@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work It!</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Work It!</h1>
+    </header>
+
+    <main>
+        <aside>
+            <h2>Add a workout</h2>
+
+            <form>
+                <label for="date-input">Date:</label>
+                <input type='date' id="date-input"/>
+
+                <label for="exercise-select">Exercise:</label>
+                <select id="exercise-select"></select>
+
+                <label for="set-input">Sets:</label>
+                <input type='text' id="set-input"/>
+
+                <label for="rep-input">Reps:</label>
+                <input type='text' id="rep-input"/>
+
+                
+                <button>Add</button>    
+            </form>
+            <label class="logoutLblPos">
+                <input name="submit2" type="submit" id="submit2" value="Log out" onclick="logout()">
+                </label>
+            
+        </aside>
+
+        <section id="exercise-list"></section>
+    </main>
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
